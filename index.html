@@ -3,659 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Supply by Tuniverse | Music Production Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --primary-dark: #4f46e5;
-            --secondary: #06b6d4;
-            --secondary-light: #67e8f9;
-            --accent: #f472b6;
-            --accent-light: #f9a8d4;
-            --dark: #0a0a0f;
-            --darker: #050508;
-            --dark-elevated: #13131f;
-            --dark-card: #1a1a2e;
-            --light: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --gray-500: #64748b;
-            --gray-600: #475569;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #67e8f9 100%);
-            --gradient-accent: linear-gradient(135deg, #f472b6 0%, #f9a8d4 100%);
-            --gradient-dark: linear-gradient(180deg, #0a0a0f 0%, #13131f 100%);
-            --font-display: 'Orbitron', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --font-accent: 'Space Grotesk', sans-serif;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.6);
-            --shadow-glow: 0 0 40px rgba(99,102,241,0.3);
-            --shadow-glow-cyan: 0 0 40px rgba(6,182,212,0.3);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; font-size: 16px; }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--darker); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
-        ::selection { background: var(--primary); color: white; }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        h1 {
-            font-size: clamp(2.8rem, 7vw, 5.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1.25rem; }
-        h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); margin-bottom: 0.75rem; }
-
-        p { color: var(--gray-400); line-height: 1.7; }
-
-        a { text-decoration: none; color: inherit; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-
-        .text-gradient {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .text-gradient-cyan {
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            padding: 1rem 2rem;
-            border-radius: var(--radius-xl);
-            font-family: var(--font-accent);
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .btn:hover::before { left: 100%; }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 60px rgba(99,102,241,0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid rgba(99,102,241,0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(99,102,241,0.15);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .btn-full { width: 100%; }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10,10,15,0.8);
-            backdrop-filter: blur(20px) saturate(180%);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(99,102,241,0.1);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--light);
-        }
-
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-family: var(--font-accent);
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding: 0.5rem 0;
-            color: var(--gray-300);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover { color: var(--light); }
-        .nav-links a:hover::after { width: 100%; }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 24px 100px;
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 100%, rgba(244,114,182,0.05) 0%, transparent 50%),
-                var(--darker);
-        }
-
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-        }
-
-        .hero-content {
-            max-width: 900px;
-            text-align: center;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.5rem;
-            background: rgba(99,102,241,0.15);
-            border: 1px solid rgba(99,102,241,0.3);
-            border-radius: var(--radius-xl);
-            font-family: var(--font-accent);
-            font-size: 0.8rem;
-            color: var(--primary-light);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-badge i { color: var(--secondary); }
-
-        .hero h1 {
-            margin-bottom: 1.25rem;
-            text-shadow: 0 0 80px rgba(99,102,241,0.3);
-        }
-
-        .hero-subtitle {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .hero-description {
-            font-size: 1.15rem;
-            color: var(--gray-400);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item { text-align: center; }
-
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary-light);
-        }
-
-        .stat-label {
-            font-family: var(--font-accent);
-            font-size: 0.8rem;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-visual {
-            position: absolute;
-            bottom: 8%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.25;
-            z-index: 1;
-        }
-
-        .sound-wave {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            height: 80px;
-        }
-
-        .sound-wave span {
-            width: 5px;
-            background: var(--gradient-primary);
-            border-radius: 3px;
-            animation: wave 1.4s ease-in-out infinite;
-        }
-
-        .sound-wave span:nth-child(1) { height: 15%; animation-delay: 0s; }
-        .sound-wave span:nth-child(2) { height: 35%; animation-delay: 0.1s; }
-        .sound-wave span:nth-child(3) { height: 55%; animation-delay: 0.2s; }
-        .sound-wave span:nth-child(4) { height: 75%; animation-delay: 0.3s; }
-        .sound-wave span:nth-child(5) { height: 100%; animation-delay: 0.4s; }
-        .sound-wave span:nth-child(6) { height: 100%; animation-delay: 0.5s; }
-        .sound-wave span:nth-child(7) { height: 75%; animation-delay: 0.6s; }
-        .sound-wave span:nth-child(8) { height: 55%; animation-delay: 0.7s; }
-        .sound-wave span:nth-child(9) { height: 35%; animation-delay: 0.8s; }
-        .sound-wave span:nth-child(10) { height: 15%; animation-delay: 0.9s; }
-
-        @keyframes wave {
-            0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
-            50% { transform: scaleY(1); opacity: 1; }
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-header h2 { margin-bottom: 1rem; }
-        .section-header p { font-size: 1.1rem; color: var(--gray-400); }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-accent);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary-light);
-            margin-bottom: 1rem;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--gradient-primary);
-        }
-
-        .services {
-            padding: 120px 0;
-            background: var(--dark);
-            position: relative;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(99,102,241,0.12);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(99,102,241,0.3);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .service-card:hover::before { transform: scaleX(1); }
-
-        .service-card.featured {
-            border-color: rgba(6,182,212,0.3);
-            background: linear-gradient(180deg, rgba(6,182,212,0.05) 0%, var(--dark-card) 100%);
-        }
-
-        .service-card.featured::before { background: var(--gradient-secondary); }
-        .service-card.featured:hover { box-shadow: var(--shadow-glow-cyan); }
-
-        .service-badge {
-            position: absolute;
-            top: 1.25rem;
-            right: 1.25rem;
-            background: var(--gradient-secondary);
-            color: var(--dark);
-            padding: 0.35rem 1rem;
-            border-radius: var(--radius-xl);
-            font-family: var(--font-accent);
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .service-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .service-card.featured .service-icon {
-            background: var(--gradient-secondary);
-            box-shadow: var(--shadow-glow-cyan);
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: var(--light);
-        }
-
-        .service-card > p {
-            color: var(--gray-400);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .price-tag, .price-range {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .price {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--secondary);
-        }
-
-        .unit {
-            color: var(--gray-500);
-            font-size: 0.85rem;
-            margin-left: 0.5rem;
-            font-family: var(--font-accent);
-        }
-
-        .price-item { margin-bottom: 0.5rem; }
-
-        .features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--gray-300);
-            font-size: 0.9rem;
-        }
-
-        .features i {
-            color: var(--secondary);
-            font-size: 0.8rem;
-        }
-
-        .service-payment {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .payment-label {
-            font-family: var(--font-accent);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-500);
-            margin-bottom: 0.75rem;
-        }
-
-        .payment-methods-row {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .payment-method-icon {
-            height: 28px;
-            width: auto;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .payment-method-icon:hover { opacity: 1; }
-
-        .pay-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            padding: 0.875rem;
-            border-radius: var(--radius-md);
-            font-family: var(--font-accent);
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .pay-btn-stripe {
-            background: #635BFF;
-            color: white;
-        }
-
-        .pay-btn-stripe:hover {
-            background: #7c73ff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(99,91,255,0.3);
-        }
-
-        .pay-btn-paypal {
-            background: #0070BA;
-            color: white;
-            margin-top: 0.5rem;
-        }
-
-        .pay-btn-paypal:hover {
-            background: #0089e0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,112,186,0.3);
-        }
-
-        .pay-btn i { font-size: 1rem; }
-
-        .trust-section {
-            padding: 60px 0;
-            background: var(--darker);
-            border-top: 1px solid rgba(99,102,241,0.1);
-            border-bottom: 1px solid rgba(99,102,241,0.1);
-        }
-
-        .trust-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .trust-title {
-            font-family: var(--font-accent);
-            font-size: 0.85rem;
-            text-
+    <title>Sound Supply by Tuniverse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon">◈</div>
+            <span class="logo-text">Sound Supply <span class="by-line">by Tuniverse</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#distribution">Distribution Scout</a></li>
+            <li><a href="#payment">Payment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="badge">Now Serving AI, Human & Hybrid Artists</div>
+            <h1 class="hero-title">
+                <span class="line">Craft Your</span>
+                <span class="line accent">Sound</span>
+                <span class="line">Identity</span>
+            </h1>
+            <p class="hero-subtitle">
+                Professional songwriting, ghostwriting, mastering, and editing 
+                for the modern creator. Digital precision meets traditional artistry.
+            </p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#distribution" class="btn btn-secondary">Distribution Scout</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+        </div>
+    </header>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2 class="section-title">Production Services</h2>
+                <p class="section-desc">Tailored audio solutions for every stage of your creative process.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-service="songwriting">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Songwriting</h3>
+                        <p class="card-desc">Complete original compositions tailored to your vision, genre, and emotional intent.</p>
+                        <div class="price-tag"><span class="price">$30</span><span class="unit">per song</span></div>
+                        <ul class="feature-list">
+                            <li>Original melody & lyrics</li>
+                            <li>Structure & arrangement notes</li>
+                            <li>2 revision rounds included</li>
+                        </ul>
+                        <button class="btn btn-card" onclick="selectService('songwriting')">Select Service</button>
+                    </div>
+                </div>
+
+                <div class="service-card featured" data-service="ghostwriting">
+                    <div class="card-glow"></div>
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 3c-4.5 0-8 3.5-8 8 0 5.25 8 10 8 10s8-4.75 8-10c0-4.5-3.5-8-8-8z"/><path d="M12 8v4l2 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Ghostwriting</h3>
+                        <p class="card-desc">Anonymous writing services. Your voice, our pen. Full discretion guaranteed.</p>
+                        <div class="price-tag"><span class="price">$100–175</span><span class="unit">per song</span></div>
+                        <div class="price-alt"><span>or</span><span class="price-small">$45 <span class="unit">per verse</span></span></div>
+                        <ul class="feature-list">
+                            <li>Full anonymity & NDA</li>
+                            <li>Custom style matching</li>
+                            <li>Unlimited revisions</li>
+                            <li>Work-for-hire rights</li>
+                        </ul>
+                        <button class="btn btn-card" onclick="selectService('ghostwriting')">Select Service</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="mastering">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 10v4"/><path d="M6 6v12"/><path d="M10 3v18"/><path d="M14 8v8"/><path d="M18 5v14"/><path d="M22 10v4"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Mastering</h3>
+                        <p class="card-desc">Final polish for commercial release. Loudness, clarity, and platform optimization.</p>
+                        <div class="price-tag"><span class="price">$15–25</span><span class="unit">per song</span></div>
+                        <ul class="feature-list">
+                            <li>EQ, compression & limiting</li>
+                            <li>Platform-specific masters</li>
+                            <li>Stem mastering available</li>
+                        </ul>
+                        <button class="btn btn-card" onclick="selectService('mastering')">Select Service</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="editing">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Song Editing</h3>
+                        <p class="card-desc">Vocal tuning, timing correction, noise reduction, and arrangement cleanup.</p>
+                        <div class="price-tag"><span class="price">$15–35</span><span class="unit">per song</span></div>
+                        <ul class="feature-list">
+                            <li>Pitch & time correction</li>
+                            <li>Noise reduction & cleanup</li>
+                            <li>Arrangement editing</li>
+                        </ul>
+                        <button class="btn btn-card" onclick="selectService('editing')">Select Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="distribution" class="distribution">
+        <div class="container">
+            <div class="dist-grid">
+                <div class="dist-visual">
+                    <div class="vinyl-record">
+                        <div class="vinyl-grooves"></div>
+                        <div class="vinyl-label"><span>TUNIVERSE</span></div>
+                    </div>
+                    <div class="floating-note note-1">♪</div>
+                    <div class="floating-note note-2">♫</div>
+                    <div class="floating-note note-3">♩</div>
+                </div>
+                <div class="dist-content">
+                    <span class="section-tag">Exclusive</span>
+                    <h2 class="section-title">Distribution Scout</h2>
+                    <p class="dist-lead">
+                        Not sure where to release your music? We analyze your goals, audience, and budget to match you with the perfect distribution partner.
+                    </p>
+                    <div class="dist-features">
+                        <div class="dist-item">
+                            <div class="dist-check">✓</div>
+                            <div><h4>Platform Analysis</h4><p>Compare DistroKid, TuneCore, CD Baby, Amuse, UnitedMasters & more.</p></div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-check">✓</div>
+                            <div><h4>Royalty Optimization</h4><p>Find the best splits and revenue models for your release strategy.</p></div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-check">✓</div>
+                            <div><h4>AI vs. Human Curator</h4><p>Hybrid recommendation engine + human expert review.</p></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openModal('distribution')">Get Matched</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="artist-types">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">Our Community</span>
+                <h2 class="section-title">Who We Work With</h2>
+            </div>
+            <div class="type-grid">
+                <div class="type-card">
+                    <div class="type-icon ai-icon">🤖</div>
+                    <h3>AI Artists</h3>
+                    <p>Vocal synthesis, generative composition, and AI-assisted production workflows.</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon human-icon">🎤</div>
+                    <h3>Human Artists</h3>
+                    <p>Traditional creators seeking professional polish and collaborative writing.</p>
+                </div>
+                <div class="type-card">
+                    <div class="type-icon hybrid-icon">⚡</div>
+                    <h3>Hybrid Artists</h3>
+                    <p>The best of both worlds. Human creativity amplified by intelligent tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="payment" class="payment">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">Secure Checkout</span>
+                <h2 class="section-title">Payment Methods</h2>
+                <p class="section-desc">Fast, encrypted, and hassle-free transactions.</p>
+            </div>
+            <div class="payment-showcase">
+                <div class="payment-card">
+                    <div class="payment-header">
+                        <span class="secure-badge">🔒 SSL Secured</span>
+                        <h3>Choose Your Method</h3>
+                    </div>
+                    <div class="payment-methods">
+                        <div class="method-row" onclick="selectPayment('stripe')">
+                            <div class="method-logo">
+                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#635BFF" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a10.09 10.09 0 0 1-4.56 1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.02.98-.06 1.58zm-6.3-5.63c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3V6.04h4.13v.87c.78-.66 1.92-1.14 3.34-1.14.28 0 .55.02.8.06v4.12c-.33-.06-.73-.1-1.18-.1-1.38 0-2.47.52-2.96 1.18v9.27h-4.13zm-6.12-14.26c1.42 0 2.4.27 3.08.58V10c-.63-.32-1.55-.58-2.73-.58-1.18 0-1.85.42-1.85 1.1 0 2.08 5.96.93 5.96 5.21 0 2.73-2.14 4.19-5.21 4.19-1.64 0-2.96-.35-3.92-.87v-3.24c.96.5 2.23.87 3.55.87 1.32 0 2.14-.37 2.14-1.22 0-2.14-5.96-1.01-5.96-5.15 0-2.52 1.93-4.07 4.94-4.07zM20.4 6.04h4.13v14.26H20.4V6.04zm0-3.66L24.53 0v2.96L20.4 6.04V2.38zM5.8 13.14c0-.83.62-1.26 1.72-1.26 1.53 0 3.24.5 4.67 1.43V9.78a10.5 10.5 0 0 0-4.67-1.06c-3.86 0-6.42 2.02-6.42 5.38 0 5.26 7.26 4.42 7.26 6.7 0 .98-.85 1.3-2.02 1.3-1.68 0-3.78-.7-5.46-1.93v3.72c1.85 1.14 3.92 1.6 5.46 1.6 3.94 0 6.58-1.95 6.58-5.36 0-5.6-7.26-4.68-7.26-6.98z"/></svg>
+                            </div>
+                            <div class="method-info"><span class="method-name">Credit / Debit Card</span><span class="method-sub">Powered by Stripe</span></div>
+                            <div class="method-check"><div class="radio"></div></div>
+                        </div>
+                        <div class="method-row" onclick="selectPayment('paypal')">
+                            <div class="method-logo">
+                                <svg viewBox="0 0 80 20" class="payment-logo"><path fill="#003087" d="M28.5 2.8h-5.2c-.4 0-.7.3-.8.7l-2.2 14.1c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l.6-3.8c0-.4.4-.7.8-.7h1.6c3.4 0 5.4-1.6 5.9-4.9.2-1.4 0-2.6-.6-3.3-1-.9-2.5-1.1-4.6-1.1zm.8 4.9c-.3 1.8-1.5 1.8-2.7 1.8h-.7l.7-4.2c0-.2.3-.4.5-.4h.3c1 0 2 0 2.5.6.3.3.3.9.4 1.2z"/><path fill="#0070E0" d="M47.4 2.8h-5.2c-.4 0-.7.3-.8.7l-2.2 14.1c0 .3.2.5.5.5h2.3c.3 0 .5-.2.5-.5l.6-3.8c0-.4.4-.7.8-.7h1.6c3.4 0 5.4-1.6 5.9-4.9.2-1.4 0-2.6-.6-3.3-1-.9-2.5-1.1-4.6-1.1zm.8 4.9c-.3 1.8-1.5 1.8-2.7 1.8h-.7l.7-4.2c0-.2.3-.4.5-.4h.3c1 0 2 0 2.5.6.3.3.3.9.4 1.2z"/><path fill="#003087" d="M17.2 7.3l.3-2.1c0-.2-.1-.4-.3-.4h-4.1c-.3 0-.6.2-.7.5l-2.2 14c0 .3.2.5.5.5h2.7c.3 0 .5-.2.5-.5l.8-5.2c0-.4.4-.7.8-.7h2.5c3.1 0 4.9-1.5 5.4-4.5.2-1.3 0-2.3-.5-2.9-.8-.8-2.1-1.1-3.7-1.1h-.1zm.6 3.8c-.2 1.3-1.1 1.3-2 1.3h-.5l.5-3.1c0-.2.2-.3.4-.3h.2c.8 0 1.5 0 1.9.4.2.2.2.6.1 1.1l.4-.4z"/><path fill="#0070E0" d="M65.3 7.3l.3-2.1c0-.2-.1-.4-.3-.4h-4.1c-.3 0-.6.2-.7.5l-2.2 14c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l.8-5.2c0-.4.4-.7.8-.7h2.5c3.1 0 4.9-1.5 5.4-4.5.2-1.3 0-2.3-.5-2.9-.8-.8-2.1-1.1-3.7-1.1h-.1zm.6 3.8c-.2 1.3-1.1 1.3-2 1.3h-.5l.5-3.1c0-.2.2-.3.4-.3h.2c.8 0 1.5 0 1.9.4.2.2.2.6.1 1.1l.4-.4z"/><path fill="#003087" d="M75.8 7.1h-2.5c-.3 0-.5.2-.6.4l-.1.6-.2-.3c-.5-.7-1.7-1-3.1-1-2.9 0-5.4 2.2-5.9 5.4-.3 1.6 0 3 .8 4 .9.9 2.1 1.3 3.6 1.3 2.5 0 3.9-1.5 3.9-1.5l-.1.7c0 .3.2.5.5.5h2.3c.4 0 .7-.3.8-.7l1.4-8.8c0-.3-.2-.5-.4-.5l-.4-.1zm-3.6 5.2c-.2 1.3-1.2 2.2-2.6 2.2-.7 0-1.2-.2-1.6-.6-.3-.4-.5-1-.4-1.7.2-1.3 1.2-2.2 2.5-2.2.7 0 1.2.2 1.6.6.4.5.6 1.1.5 1.7z"/><path fill="#0070E0" d="M82.2 7.1l-.2 1.5c0 .2-.2.3-.4.3h-1.3c-1.1 0-1.9.3-2.3 1.1l-1.8 11.3c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l1.8-11.3c0-.2.2-.3.4-.3h1.3c.3 0 .5-.2.5-.5l.2-1.5c0-.3-.2-.5-.5-.5h-.7z"/></svg>
+                            </div>
+                            <div class="method-info"><span class="method-name">PayPal</span><span class="method-sub">Pay with your balance</span></div>
+                            <div class="method-check"><div class="radio"></div></div>
+                        </div>
+                        <div class="method-row" onclick="selectPayment('cashapp')">
+                            <div class="method-logo">
+                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#00D632" d="M41.2 10.3c-1.5-.6-2.2-.9-2.2-1.8 0-.7.6-1.3 1.8-1.3 1.5 0 2.8.6 3.6 1.1l.9-2.7c-.9-.6-2.5-1.2-4.5-1.2-3.6 0-5.8 2-5.8 4.8 0 2.6 1.9 3.7 4.2 4.5 1.7.6 2.5 1 2.5 2 0 .8-.7 1.4-2 1.4-1.6 0-3.3-.7-4.5-1.6l-1 2.7c1.3.9 3.3 1.7 5.4 1.7 3.8 0 6-1.9 6-4.9.1-2.4-1.6-3.6-4.4-4.7z"/><path fill="#00D632" d="M23.5 2.8c1.2 3.2 2.7 7.4 2.7 10.1 0 2.8-1.2 4.5-3.6 4.5-1.2 0-2.2-.4-2.9-.9l-.9 3c1 .6 2.4 1 3.9 1 4.2 0 6.6-2.6 6.6-7.2 0-3.4-1.6-7.8-2.6-10.5h-3.2z"/><path fill="#00D632" d="M20.5 17.2h3.5L24.8 2.8h-3.5l-1.3 7.5-2.8-7.5h-3.8l5.2 12.2c.5 1.2 1.4 2 2.9 2z"/><circle fill="#00D632" cx="10.5" cy="10.5" r="9.5"/><path fill="#FFF" d="M12.8 13.5c-.6.3-1.4.5-2.2.5-2.1 0-3.4-1.2-3.4-3.3V7.5H5.8V5.2h1.4V2.8l3.1-.4v2.8h2.3l-.3 2.3H10.3v3.1c0 .9.4 1.3 1.1 1.3.4 0 .8-.1 1.1-.3l.3 2.2z"/></svg>
+                            </div>
+                            <div class="method-info"><span class="method-name">Cash App</span><span class="method-sub">Quick mobile payment</span></div>
+                            <div class="method-check"><div class="radio"></div></div>
+                        </div>
+                        <div class="method-row" onclick="selectPayment('venmo')">
+                            <div class="method-logo">
+                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#008CFF" d="M48.5 2.8l-5.5 14.4h-3.8l2.7-6.8c-1.1 2.2-2.3 4-4.6 4h-.5l-.7-3.1c2.5-.6 4.1-3.2 4.8-5.6l.6-2.3h6.5l-.5-.6z"/><path fill="#008CFF" d="M31.2 2.8c1.2 3.2 2.7 7.4 2.7 10.1 0 2.8-1.2 4.5-3.6 4.5-1.2 0-2.2-.4-2.9-.9l-.9 3c1 .6 2.4 1 3.9 1 4.2 0 6.6-2.6 6.6-7.2 0-3.4-1.6-7.8-2.6-10.5h-3.2z"/><path fill="#008CFF" d="M20.5 17.2h3.5L24.8 2.8h-3.5l-1.3 7.5-2.8-7.5h-3.8l5.2 12.2c.5 1.2 1.4 2 2.9 2z"/></svg>
+                            </div>
+                            <div class="method-info"><span class="method-name">Venmo</span><span class="method-sub">Social payment</span></div>
+                            <div class="method-check"><div class="radio"></div></div>
+                        </div>
+                    </div>
+                    <div class="payment-summary">
+                        <div class="summary-row"><span>Selected Service</span><span id="selected-service">None</span></div>
+                        <div class="summary-row total"><span>Total</span><span id="total-price">$0.00</span></div>
+                        <button class="btn btn-pay" id="pay-btn" disabled>Proceed to Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-icon large">◈</div>
+                    <h3>Sound Supply</h3>
+                    <p>by Tuniverse</p>
+                    <p class="footer-tagline">Digital precision. Traditional soul.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Songwriting</a></li>
+                        <li><a href="#services">Ghostwriting</a></li>
+                        <li><a href="#services">Mastering</a></li>
+                        <li><a href="#services">Song Editing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#distribution">Distribution Scout</a></li>
+                        <li><a href="#payment">Payment</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>Ready to create? Reach out and let's build your sound.</p>
+                    <a href="mailto:contact@tuniverse.com" class="contact-email">contact@tuniverse.com</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Twitter">X</a>
+                        <a href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> Sound Supply by Tuniverse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Service Request</h3>
+            <p id="modal-body">Fill out the form below and we'll get back to you within 24 hours.</p>
+            <form class="modal-form" onsubmit="event.preventDefault(); closeModal(); alert('Request sent! We will contact you shortly.');">
+                <input type="text" placeholder="Your Name / Artist Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select required>
+                    <option value="">Artist Type</option>
+                    <option>AI Artist</option>
+                    <option>Human Artist</option>
+                    <option>Hybrid Artist</option>
+                </select>
+                <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
