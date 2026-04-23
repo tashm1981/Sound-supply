@@ -4,31 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services - Sound Supply</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <canvas id="wave"></canvas>
-
 <nav>
-  <h1>Sound<span>Supply</span></h1>
+  <h1>SoundSupply</h1>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="order.html" class="nav-cta">Order Now</a>
   </div>
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <button class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
 </nav>
-
 <div class="services-page">
   <div class="section-header">
-    <p class="label">What We Offer</p>
-    <h2>All Services</h2>
+    <span class="label">What We Offer</span>
+    <h2 class="text-gradient">All Services</h2>
   </div>
   <div class="cards">
     <div class="card">
-      <div class="card-icon">✍️</div>
+      <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
       <h3>Songwriting</h3>
       <div class="price">$30</div>
       <p>per song</p>
@@ -40,7 +38,7 @@
       <a href="order.html?service=songwriting" class="order-btn">Order Now</a>
     </div>
     <div class="card">
-      <div class="card-icon">👻</div>
+      <div class="card-icon"><i class="fas fa-ghost"></i></div>
       <h3>Ghostwriting</h3>
       <div class="price">$100–$175</div>
       <p>per song · $45/verse</p>
@@ -52,7 +50,7 @@
       <a href="order.html?service=ghostwriting" class="order-btn">Order Now</a>
     </div>
     <div class="card">
-      <div class="card-icon">🎚️</div>
+      <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
       <h3>Mastering</h3>
       <div class="price">$15–$25</div>
       <p>per track</p>
@@ -64,7 +62,7 @@
       <a href="order.html?service=mastering" class="order-btn">Order Now</a>
     </div>
     <div class="card">
-      <div class="card-icon">✂️</div>
+      <div class="card-icon"><i class="fas fa-cut"></i></div>
       <h3>Song Editing</h3>
       <div class="price">$15–$35</div>
       <p>per song</p>
@@ -76,9 +74,9 @@
       <a href="order.html?service=editing" class="order-btn">Order Now</a>
     </div>
     <div class="card highlight">
-      <div class="card-icon">📡</div>
+      <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
       <h3>Distribution Scout</h3>
-      <div class="price">Free</div>
+      <div class="price text-gradient-cyan">Free</div>
       <p>consultation</p>
       <ul class="service-features">
         <li>Platform matching</li>
@@ -89,13 +87,9 @@
     </div>
   </div>
 </div>
-
 <footer>
   <div class="footer-inner">
-    <div>
-      <h3>Sound<span>Supply</span></h3>
-      <p>A Tuniverse Inc. service</p>
-    </div>
+    <div><h3>SoundSupply</h3><p>A Tuniverse Inc. service</p></div>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
@@ -104,28 +98,14 @@
   </div>
   <p class="copyright">© 2026 Sound Supply · Tuniverse Inc. All rights reserved.</p>
 </footer>
-
 <script>
-const canvas = document.getElementById("wave");
-const ctx = canvas.getContext("2d");
-function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-resize(); window.addEventListener('resize', resize);
-let t = 0;
-function draw() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for (let i=0;i<3;i++) {
-    ctx.beginPath(); ctx.moveTo(0, canvas.height/2);
-    for (let x=0;x<canvas.width;x++) {
-      let y = canvas.height/2 + Math.sin((x+t*(1+i*0.3))*0.018)*(35-i*8);
-      ctx.lineTo(x,y);
-    }
-    ctx.strokeStyle=``rgba(99,102,241,${0.12-i*0.03})``; ctx.lineWidth=2-i*0.5;
-    ctx.shadowBlur=15; ctx.shadowColor="#6366f1"; ctx.stroke();
-  }
-  t+=1.5; requestAnimationFrame(draw);
-}
+const canvas=document.getElementById("wave"),ctx=canvas.getContext("2d");
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+let t=0;
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);const colors=['rgba(99,102,241,0.12)','rgba(139,92,246,0.08)','rgba(6,182,212,0.06)'];for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(0,canvas.height/2);for(let x=0;x<canvas.width;x++){let y=canvas.height/2+Math.sin((x+t*(1+i*0.25))*0.016)*(40-i*10);ctx.lineTo(x,y);}ctx.strokeStyle=colors[i];ctx.lineWidth=2-i*0.5;ctx.shadowBlur=20;ctx.shadowColor=i===0?'#6366f1':'#06b6d4';ctx.stroke();}t+=1.2;requestAnimationFrame(draw);}
 draw();
-function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+function toggleMenu(){document.querySelector('.nav-links').classList.toggle('open');}
 </script>
 </body>
 </html>
