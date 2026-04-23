@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services - Sound Supply</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -119,8 +119,8 @@ function draw() {
       let y = canvas.height/2 + Math.sin((x+t*(1+i*0.3))*0.018)*(35-i*8);
       ctx.lineTo(x,y);
     }
-    ctx.strokeStyle=`rgba(0,255,204,${0.15-i*0.04})`; ctx.lineWidth=2-i*0.5;
-    ctx.shadowBlur=15; ctx.shadowColor="#00ffcc"; ctx.stroke();
+    ctx.strokeStyle=``rgba(99,102,241,${0.12-i*0.03})``; ctx.lineWidth=2-i*0.5;
+    ctx.shadowBlur=15; ctx.shadowColor="#6366f1"; ctx.stroke();
   }
   t+=1.5; requestAnimationFrame(draw);
 }
