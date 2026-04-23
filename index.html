@@ -1,326 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Supply by Tuniverse</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sound Supply</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-brand">
-            <div class="logo-icon">◈</div>
-            <span class="logo-text">Sound Supply <span class="by-line">by Tuniverse</span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#distribution">Distribution Scout</a></li>
-            <li><a href="#payment">Payment</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger"><span></span><span></span><span></span></div>
-    </nav>
-    <header class="hero">
-        <div class="hero-bg">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
-        <div class="hero-content">
-            <div class="badge">Now Serving AI, Human & Hybrid Artists</div>
-            <h1 class="hero-title">
-                <span class="line">Craft Your</span>
-                <span class="line accent">Sound</span>
-                <span class="line">Identity</span>
-            </h1>
-            <p class="hero-subtitle">
-                Professional songwriting, ghostwriting, mastering, and editing 
-                for the modern creator. Digital precision meets traditional artistry.
-            </p>
-            <div class="hero-cta">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="#distribution" class="btn btn-secondary">Distribution Scout</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"><div class="wheel"></div></div>
-        </div>
-    </header>
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Production Services</h2>
-                <p class="section-desc">Tailored audio solutions for every stage of your creative process.</p>
-            </div>
+<nav>
+  <h1>Sound Supply</h1>
+  <div>
+    <a href="services.html">Services</a>
+    <a href="#">Login</a>
+  </div>
+</nav>
 
-            <div class="services-grid">
-                <div class="service-card" data-service="songwriting">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Songwriting</h3>
-                        <p class="card-desc">Complete original compositions tailored to your vision, genre, and emotional intent.</p>
-                        <div class="price-tag"><span class="price">$30</span><span class="unit">per song</span></div>
-                        <ul class="feature-list">
-                            <li>Original melody & lyrics</li>
-                            <li>Structure & arrangement notes</li>
-                            <li>2 revision rounds included</li>
-                        </ul>
-                        <button class="btn btn-card" onclick="selectService('songwriting')">Select Service</button>
-                    </div>
-                </div>
+<section class="hero">
+  <h2>Marketplace for Music Creation</h2>
+  <p>AI • Human • Hybrid</p>
+  <a href="services.html" class="cta">Browse Services</a>
+</section>
 
-                <div class="service-card featured" data-service="ghostwriting">
-                    <div class="card-glow"></div>
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 3c-4.5 0-8 3.5-8 8 0 5.25 8 10 8 10s8-4.75 8-10c0-4.5-3.5-8-8-8z"/><path d="M12 8v4l2 2"/>
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Ghostwriting</h3>
-                        <p class="card-desc">Anonymous writing services. Your voice, our pen. Full discretion guaranteed.</p>
-                        <div class="price-tag"><span class="price">$100–175</span><span class="unit">per song</span></div>
-                        <div class="price-alt"><span>or</span><span class="price-small">$45 <span class="unit">per verse</span></span></div>
-                        <ul class="feature-list">
-                            <li>Full anonymity & NDA</li>
-                            <li>Custom style matching</li>
-                            <li>Unlimited revisions</li>
-                            <li>Work-for-hire rights</li>
-                        </ul>
-                        <button class="btn btn-card" onclick="selectService('ghostwriting')">Select Service</button>
-                    </div>
-                </div>
+<section class="features">
+  <div>
+    <h3>🎤 Artists</h3>
+    <p>Order writing, mastering, editing instantly</p>
+  </div>
+  <div>
+    <h3>⚡ Fast Delivery</h3>
+    <p>Professional results in record time</p>
+  </div>
+  <div>
+    <h3>📡 Distribution Scout</h3>
+    <p>We match you with the right platform</p>
+  </div>
+</section>
 
-                <div class="service-card" data-service="mastering">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M2 10v4"/><path d="M6 6v12"/><path d="M10 3v18"/><path d="M14 8v8"/><path d="M18 5v14"/><path d="M22 10v4"/>
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Mastering</h3>
-                        <p class="card-desc">Final polish for commercial release. Loudness, clarity, and platform optimization.</p>
-                        <div class="price-tag"><span class="price">$15–25</span><span class="unit">per song</span></div>
-                        <ul class="feature-list">
-                            <li>EQ, compression & limiting</li>
-                            <li>Platform-specific masters</li>
-                            <li>Stem mastering available</li>
-                        </ul>
-                        <button class="btn btn-card" onclick="selectService('mastering')">Select Service</button>
-                    </div>
-                </div>
-
-                <div class="service-card" data-service="editing">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                            </svg>
-                        </div>
-                        <h3 class="card-title">Song Editing</h3>
-                        <p class="card-desc">Vocal tuning, timing correction, noise reduction, and arrangement cleanup.</p>
-                        <div class="price-tag"><span class="price">$15–35</span><span class="unit">per song</span></div>
-                        <ul class="feature-list">
-                            <li>Pitch & time correction</li>
-                            <li>Noise reduction & cleanup</li>
-                            <li>Arrangement editing</li>
-                        </ul>
-                        <button class="btn btn-card" onclick="selectService('editing')">Select Service</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="distribution" class="distribution">
-        <div class="container">
-            <div class="dist-grid">
-                <div class="dist-visual">
-                    <div class="vinyl-record">
-                        <div class="vinyl-grooves"></div>
-                        <div class="vinyl-label"><span>TUNIVERSE</span></div>
-                    </div>
-                    <div class="floating-note note-1">♪</div>
-                    <div class="floating-note note-2">♫</div>
-                    <div class="floating-note note-3">♩</div>
-                </div>
-                <div class="dist-content">
-                    <span class="section-tag">Exclusive</span>
-                    <h2 class="section-title">Distribution Scout</h2>
-                    <p class="dist-lead">
-                        Not sure where to release your music? We analyze your goals, audience, and budget to match you with the perfect distribution partner.
-                    </p>
-                    <div class="dist-features">
-                        <div class="dist-item">
-                            <div class="dist-check">✓</div>
-                            <div><h4>Platform Analysis</h4><p>Compare DistroKid, TuneCore, CD Baby, Amuse, UnitedMasters & more.</p></div>
-                        </div>
-                        <div class="dist-item">
-                            <div class="dist-check">✓</div>
-                            <div><h4>Royalty Optimization</h4><p>Find the best splits and revenue models for your release strategy.</p></div>
-                        </div>
-                        <div class="dist-item">
-                            <div class="dist-check">✓</div>
-                            <div><h4>AI vs. Human Curator</h4><p>Hybrid recommendation engine + human expert review.</p></div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openModal('distribution')">Get Matched</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="artist-types">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">Our Community</span>
-                <h2 class="section-title">Who We Work With</h2>
-            </div>
-            <div class="type-grid">
-                <div class="type-card">
-                    <div class="type-icon ai-icon">🤖</div>
-                    <h3>AI Artists</h3>
-                    <p>Vocal synthesis, generative composition, and AI-assisted production workflows.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-icon human-icon">🎤</div>
-                    <h3>Human Artists</h3>
-                    <p>Traditional creators seeking professional polish and collaborative writing.</p>
-                </div>
-                <div class="type-card">
-                    <div class="type-icon hybrid-icon">⚡</div>
-                    <h3>Hybrid Artists</h3>
-                    <p>The best of both worlds. Human creativity amplified by intelligent tools.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="payment" class="payment">
-        <div class="container">
-            <div class="section-header center">
-                <span class="section-tag">Secure Checkout</span>
-                <h2 class="section-title">Payment Methods</h2>
-                <p class="section-desc">Fast, encrypted, and hassle-free transactions.</p>
-            </div>
-            <div class="payment-showcase">
-                <div class="payment-card">
-                    <div class="payment-header">
-                        <span class="secure-badge">🔒 SSL Secured</span>
-                        <h3>Choose Your Method</h3>
-                    </div>
-                    <div class="payment-methods">
-                        <div class="method-row" onclick="selectPayment('stripe')">
-                            <div class="method-logo">
-                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#635BFF" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a10.09 10.09 0 0 1-4.56 1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.02.98-.06 1.58zm-6.3-5.63c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3V6.04h4.13v.87c.78-.66 1.92-1.14 3.34-1.14.28 0 .55.02.8.06v4.12c-.33-.06-.73-.1-1.18-.1-1.38 0-2.47.52-2.96 1.18v9.27h-4.13zm-6.12-14.26c1.42 0 2.4.27 3.08.58V10c-.63-.32-1.55-.58-2.73-.58-1.18 0-1.85.42-1.85 1.1 0 2.08 5.96.93 5.96 5.21 0 2.73-2.14 4.19-5.21 4.19-1.64 0-2.96-.35-3.92-.87v-3.24c.96.5 2.23.87 3.55.87 1.32 0 2.14-.37 2.14-1.22 0-2.14-5.96-1.01-5.96-5.15 0-2.52 1.93-4.07 4.94-4.07zM20.4 6.04h4.13v14.26H20.4V6.04zm0-3.66L24.53 0v2.96L20.4 6.04V2.38zM5.8 13.14c0-.83.62-1.26 1.72-1.26 1.53 0 3.24.5 4.67 1.43V9.78a10.5 10.5 0 0 0-4.67-1.06c-3.86 0-6.42 2.02-6.42 5.38 0 5.26 7.26 4.42 7.26 6.7 0 .98-.85 1.3-2.02 1.3-1.68 0-3.78-.7-5.46-1.93v3.72c1.85 1.14 3.92 1.6 5.46 1.6 3.94 0 6.58-1.95 6.58-5.36 0-5.6-7.26-4.68-7.26-6.98z"/></svg>
-                            </div>
-                            <div class="method-info"><span class="method-name">Credit / Debit Card</span><span class="method-sub">Powered by Stripe</span></div>
-                            <div class="method-check"><div class="radio"></div></div>
-                        </div>
-                        <div class="method-row" onclick="selectPayment('paypal')">
-                            <div class="method-logo">
-                                <svg viewBox="0 0 80 20" class="payment-logo"><path fill="#003087" d="M28.5 2.8h-5.2c-.4 0-.7.3-.8.7l-2.2 14.1c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l.6-3.8c0-.4.4-.7.8-.7h1.6c3.4 0 5.4-1.6 5.9-4.9.2-1.4 0-2.6-.6-3.3-1-.9-2.5-1.1-4.6-1.1zm.8 4.9c-.3 1.8-1.5 1.8-2.7 1.8h-.7l.7-4.2c0-.2.3-.4.5-.4h.3c1 0 2 0 2.5.6.3.3.3.9.4 1.2z"/><path fill="#0070E0" d="M47.4 2.8h-5.2c-.4 0-.7.3-.8.7l-2.2 14.1c0 .3.2.5.5.5h2.3c.3 0 .5-.2.5-.5l.6-3.8c0-.4.4-.7.8-.7h1.6c3.4 0 5.4-1.6 5.9-4.9.2-1.4 0-2.6-.6-3.3-1-.9-2.5-1.1-4.6-1.1zm.8 4.9c-.3 1.8-1.5 1.8-2.7 1.8h-.7l.7-4.2c0-.2.3-.4.5-.4h.3c1 0 2 0 2.5.6.3.3.3.9.4 1.2z"/><path fill="#003087" d="M17.2 7.3l.3-2.1c0-.2-.1-.4-.3-.4h-4.1c-.3 0-.6.2-.7.5l-2.2 14c0 .3.2.5.5.5h2.7c.3 0 .5-.2.5-.5l.8-5.2c0-.4.4-.7.8-.7h2.5c3.1 0 4.9-1.5 5.4-4.5.2-1.3 0-2.3-.5-2.9-.8-.8-2.1-1.1-3.7-1.1h-.1zm.6 3.8c-.2 1.3-1.1 1.3-2 1.3h-.5l.5-3.1c0-.2.2-.3.4-.3h.2c.8 0 1.5 0 1.9.4.2.2.2.6.1 1.1l.4-.4z"/><path fill="#0070E0" d="M65.3 7.3l.3-2.1c0-.2-.1-.4-.3-.4h-4.1c-.3 0-.6.2-.7.5l-2.2 14c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l.8-5.2c0-.4.4-.7.8-.7h2.5c3.1 0 4.9-1.5 5.4-4.5.2-1.3 0-2.3-.5-2.9-.8-.8-2.1-1.1-3.7-1.1h-.1zm.6 3.8c-.2 1.3-1.1 1.3-2 1.3h-.5l.5-3.1c0-.2.2-.3.4-.3h.2c.8 0 1.5 0 1.9.4.2.2.2.6.1 1.1l.4-.4z"/><path fill="#003087" d="M75.8 7.1h-2.5c-.3 0-.5.2-.6.4l-.1.6-.2-.3c-.5-.7-1.7-1-3.1-1-2.9 0-5.4 2.2-5.9 5.4-.3 1.6 0 3 .8 4 .9.9 2.1 1.3 3.6 1.3 2.5 0 3.9-1.5 3.9-1.5l-.1.7c0 .3.2.5.5.5h2.3c.4 0 .7-.3.8-.7l1.4-8.8c0-.3-.2-.5-.4-.5l-.4-.1zm-3.6 5.2c-.2 1.3-1.2 2.2-2.6 2.2-.7 0-1.2-.2-1.6-.6-.3-.4-.5-1-.4-1.7.2-1.3 1.2-2.2 2.5-2.2.7 0 1.2.2 1.6.6.4.5.6 1.1.5 1.7z"/><path fill="#0070E0" d="M82.2 7.1l-.2 1.5c0 .2-.2.3-.4.3h-1.3c-1.1 0-1.9.3-2.3 1.1l-1.8 11.3c0 .3.2.5.5.5h2.5c.3 0 .5-.2.5-.5l1.8-11.3c0-.2.2-.3.4-.3h1.3c.3 0 .5-.2.5-.5l.2-1.5c0-.3-.2-.5-.5-.5h-.7z"/></svg>
-                            </div>
-                            <div class="method-info"><span class="method-name">PayPal</span><span class="method-sub">Pay with your balance</span></div>
-                            <div class="method-check"><div class="radio"></div></div>
-                        </div>
-                        <div class="method-row" onclick="selectPayment('cashapp')">
-                            <div class="method-logo">
-                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#00D632" d="M41.2 10.3c-1.5-.6-2.2-.9-2.2-1.8 0-.7.6-1.3 1.8-1.3 1.5 0 2.8.6 3.6 1.1l.9-2.7c-.9-.6-2.5-1.2-4.5-1.2-3.6 0-5.8 2-5.8 4.8 0 2.6 1.9 3.7 4.2 4.5 1.7.6 2.5 1 2.5 2 0 .8-.7 1.4-2 1.4-1.6 0-3.3-.7-4.5-1.6l-1 2.7c1.3.9 3.3 1.7 5.4 1.7 3.8 0 6-1.9 6-4.9.1-2.4-1.6-3.6-4.4-4.7z"/><path fill="#00D632" d="M23.5 2.8c1.2 3.2 2.7 7.4 2.7 10.1 0 2.8-1.2 4.5-3.6 4.5-1.2 0-2.2-.4-2.9-.9l-.9 3c1 .6 2.4 1 3.9 1 4.2 0 6.6-2.6 6.6-7.2 0-3.4-1.6-7.8-2.6-10.5h-3.2z"/><path fill="#00D632" d="M20.5 17.2h3.5L24.8 2.8h-3.5l-1.3 7.5-2.8-7.5h-3.8l5.2 12.2c.5 1.2 1.4 2 2.9 2z"/><circle fill="#00D632" cx="10.5" cy="10.5" r="9.5"/><path fill="#FFF" d="M12.8 13.5c-.6.3-1.4.5-2.2.5-2.1 0-3.4-1.2-3.4-3.3V7.5H5.8V5.2h1.4V2.8l3.1-.4v2.8h2.3l-.3 2.3H10.3v3.1c0 .9.4 1.3 1.1 1.3.4 0 .8-.1 1.1-.3l.3 2.2z"/></svg>
-                            </div>
-                            <div class="method-info"><span class="method-name">Cash App</span><span class="method-sub">Quick mobile payment</span></div>
-                            <div class="method-check"><div class="radio"></div></div>
-                        </div>
-                        <div class="method-row" onclick="selectPayment('venmo')">
-                            <div class="method-logo">
-                                <svg viewBox="0 0 60 25" class="payment-logo"><path fill="#008CFF" d="M48.5 2.8l-5.5 14.4h-3.8l2.7-6.8c-1.1 2.2-2.3 4-4.6 4h-.5l-.7-3.1c2.5-.6 4.1-3.2 4.8-5.6l.6-2.3h6.5l-.5-.6z"/><path fill="#008CFF" d="M31.2 2.8c1.2 3.2 2.7 7.4 2.7 10.1 0 2.8-1.2 4.5-3.6 4.5-1.2 0-2.2-.4-2.9-.9l-.9 3c1 .6 2.4 1 3.9 1 4.2 0 6.6-2.6 6.6-7.2 0-3.4-1.6-7.8-2.6-10.5h-3.2z"/><path fill="#008CFF" d="M20.5 17.2h3.5L24.8 2.8h-3.5l-1.3 7.5-2.8-7.5h-3.8l5.2 12.2c.5 1.2 1.4 2 2.9 2z"/></svg>
-                            </div>
-                            <div class="method-info"><span class="method-name">Venmo</span><span class="method-sub">Social payment</span></div>
-                            <div class="method-check"><div class="radio"></div></div>
-                        </div>
-                    </div>
-                    <div class="payment-summary">
-                        <div class="summary-row"><span>Selected Service</span><span id="selected-service">None</span></div>
-                        <div class="summary-row total"><span>Total</span><span id="total-price">$0.00</span></div>
-                        <button class="btn btn-pay" id="pay-btn" disabled>Proceed to Payment</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo-icon large">◈</div>
-                    <h3>Sound Supply</h3>
-                    <p>by Tuniverse</p>
-                    <p class="footer-tagline">Digital precision. Traditional soul.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Songwriting</a></li>
-                        <li><a href="#services">Ghostwriting</a></li>
-                        <li><a href="#services">Mastering</a></li>
-                        <li><a href="#services">Song Editing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#distribution">Distribution Scout</a></li>
-                        <li><a href="#payment">Payment</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Get in Touch</h4>
-                    <p>Ready to create? Reach out and let's build your sound.</p>
-                    <a href="mailto:contact@tuniverse.com" class="contact-email">contact@tuniverse.com</a>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Twitter">X</a>
-                        <a href="#" aria-label="YouTube">YT</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p> Sound Supply by Tuniverse. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 id="modal-title">Service Request</h3>
-            <p id="modal-body">Fill out the form below and we'll get back to you within 24 hours.</p>
-            <form class="modal-form" onsubmit="event.preventDefault(); closeModal(); alert('Request sent! We will contact you shortly.');">
-                <input type="text" placeholder="Your Name / Artist Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <select required>
-                    <option value="">Artist Type</option>
-                    <option>AI Artist</option>
-                    <option>Human Artist</option>
-                    <option>Hybrid Artist</option>
-                </select>
-                <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
-                <button type="submit" class="btn btn-primary">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
