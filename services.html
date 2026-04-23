@@ -3,43 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
 <title>Services - Sound Supply</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<canvas id="wave"></canvas>
+
 <nav>
-  <h1>Sound Supply</h1>
-  <a href="index.html">Home</a>
+  <h1>Sound<span>Supply</span></h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="order.html" class="nav-cta">Order Now</a>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </nav>
 
-<section class="marketplace">
-  <div class="service-card">
-    <h3>Songwriting</h3>
-    <p>$30</p>
-    <a href="order.html?service=songwriting" class="order-btn">Order</a>
+<div class="services-page">
+  <div class="section-header">
+    <p class="label">What We Offer</p>
+    <h2>All Services</h2>
   </div>
-  <div class="service-card">
-    <h3>Ghostwriting</h3>
-    <p>$100 - $175</p>
-    <a href="order.html?service=ghostwriting" class="order-btn">Order</a>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <h3>Songwriting</h3>
+      <div class="price">$30</div>
+      <p>per song</p>
+      <ul class="service-features">
+        <li>Original lyrics & melody</li>
+        <li>Genre-tailored writing</li>
+        <li>AI & human compatible</li>
+      </ul>
+      <a href="order.html?service=songwriting" class="order-btn">Order Now</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">👻</div>
+      <h3>Ghostwriting</h3>
+      <div class="price">$100–$175</div>
+      <p>per song · $45/verse</p>
+      <ul class="service-features">
+        <li>Full song or individual verses</li>
+        <li>100% ownership transferred</li>
+        <li>Any genre or style</li>
+      </ul>
+      <a href="order.html?service=ghostwriting" class="order-btn">Order Now</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎚️</div>
+      <h3>Mastering</h3>
+      <div class="price">$15–$25</div>
+      <p>per track</p>
+      <ul class="service-features">
+        <li>Streaming-ready masters</li>
+        <li>AI vocal optimization</li>
+        <li>Loudness normalization</li>
+      </ul>
+      <a href="order.html?service=mastering" class="order-btn">Order Now</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">✂️</div>
+      <h3>Song Editing</h3>
+      <div class="price">$15–$35</div>
+      <p>per song</p>
+      <ul class="service-features">
+        <li>Vocal tuning & timing</li>
+        <li>Arrangement cleanup</li>
+        <li>AI & live instrument editing</li>
+      </ul>
+      <a href="order.html?service=editing" class="order-btn">Order Now</a>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">📡</div>
+      <h3>Distribution Scout</h3>
+      <div class="price">Free</div>
+      <p>consultation</p>
+      <ul class="service-features">
+        <li>Platform matching</li>
+        <li>Cost analysis</li>
+        <li>Release strategy planning</li>
+      </ul>
+      <a href="order.html?service=distribution" class="order-btn">Get Started</a>
+    </div>
   </div>
-  <div class="service-card">
-    <h3>Mastering</h3>
-    <p>$15 - $25</p>
-    <a href="order.html?service=mastering" class="order-btn">Order</a>
-  </div>
-  <div class="service-card">
-    <h3>Song Editing</h3>
-    <p>$15 - $35</p>
-    <a href="order.html?service=editing" class="order-btn">Order</a>
-  </div>
-  <div class="service-card highlight">
-    <h3>Distribution Scout</h3>
-    <p>Find your perfect distro</p>
-    <a href="order.html?service=distribution" class="order-btn">Start</a>
-  </div>
-</section>
+</div>
 
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>Sound<span>Supply</span></h3>
+      <p>A Tuniverse Inc. service</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="order.html">Order</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Sound Supply · Tuniverse Inc. All rights reserved.</p>
+</footer>
+
+<script>
+const canvas = document.getElementById("wave");
+const ctx = canvas.getContext("2d");
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+let t = 0;
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for (let i=0;i<3;i++) {
+    ctx.beginPath(); ctx.moveTo(0, canvas.height/2);
+    for (let x=0;x<canvas.width;x++) {
+      let y = canvas.height/2 + Math.sin((x+t*(1+i*0.3))*0.018)*(35-i*8);
+      ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle=`rgba(0,255,204,${0.15-i*0.04})`; ctx.lineWidth=2-i*0.5;
+    ctx.shadowBlur=15; ctx.shadowColor="#00ffcc"; ctx.stroke();
+  }
+  t+=1.5; requestAnimationFrame(draw);
+}
+draw();
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+</script>
 </body>
 </html>

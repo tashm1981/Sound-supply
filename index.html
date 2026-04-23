@@ -3,39 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sound Supply</title>
+<title>Sound Supply | Music Creation Marketplace</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<canvas id="wave"></canvas>
+
 <nav>
-  <h1>Sound Supply</h1>
-  <div>
+  <h1>Sound<span>Supply</span></h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="#">Login</a>
+    <a href="order.html" class="nav-cta">Order Now</a>
   </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </nav>
 
 <section class="hero">
-  <h2>Marketplace for Music Creation</h2>
-  <p>AI • Human • Hybrid</p>
-  <a href="services.html" class="cta">Browse Services</a>
+  <div class="hero-badge">Tuniverse Inc. Presents</div>
+  <h2>Your Sound.<br><span class="glow">Supplied.</span></h2>
+  <p>Professional music services for AI • Human • Hybrid Artists</p>
+  <a href="services.html" class="cta-btn">Enter Marketplace</a>
+  <div class="hero-stats">
+    <div><strong>AI</strong><span>Artists</span></div>
+    <div><strong>Human</strong><span>Artists</span></div>
+    <div><strong>Hybrid</strong><span>Artists</span></div>
+  </div>
 </section>
 
 <section class="features">
-  <div>
-    <h3>🎤 Artists</h3>
-    <p>Order writing, mastering, editing instantly</p>
+  <div class="feature">
+    <div class="feature-icon">🎤</div>
+    <h3>Any Artist</h3>
+    <p>We serve AI, human, and hybrid creators with tailored workflows</p>
   </div>
-  <div>
-    <h3>⚡ Fast Delivery</h3>
-    <p>Professional results in record time</p>
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <h3>Fast Delivery</h3>
+    <p>Professional results delivered quickly so you can keep creating</p>
   </div>
-  <div>
-    <h3>📡 Distribution Scout</h3>
-    <p>We match you with the right platform</p>
+  <div class="feature">
+    <div class="feature-icon">📡</div>
+    <h3>Distribution Scout</h3>
+    <p>We match you with the perfect platform for your sound</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🔒</div>
+    <h3>Secure Payments</h3>
+    <p>Stripe, PayPal, Visa — all major methods accepted</p>
   </div>
 </section>
+
+<section class="services-preview">
+  <div class="section-header">
+    <p class="label">What We Offer</p>
+    <h2>Services</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <h3>Songwriting</h3>
+      <div class="price">$30</div>
+      <p>per song</p>
+      <a href="order.html?service=songwriting" class="order-btn">Order</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">👻</div>
+      <h3>Ghostwriting</h3>
+      <div class="price">$100–$175</div>
+      <p>per song · $45/verse</p>
+      <a href="order.html?service=ghostwriting" class="order-btn">Order</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎚️</div>
+      <h3>Mastering</h3>
+      <div class="price">$15–$25</div>
+      <p>per track</p>
+      <a href="order.html?service=mastering" class="order-btn">Order</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">✂️</div>
+      <h3>Song Editing</h3>
+      <div class="price">$15–$35</div>
+      <p>per song</p>
+      <a href="order.html?service=editing" class="order-btn">Order</a>
+    </div>
+    <div class="card highlight">
+      <div class="card-icon">📡</div>
+      <h3>Distribution Scout</h3>
+      <div class="price">Free</div>
+      <p>consultation</p>
+      <a href="order.html?service=distribution" class="order-btn">Start</a>
+    </div>
+  </div>
+</section>
+
+<section class="artist-types">
+  <div class="section-header">
+    <p class="label">No Limits</p>
+    <h2>For Every Artist</h2>
+  </div>
+  <div class="artist-grid">
+    <div class="artist-card ai">
+      <div class="artist-icon">🤖</div>
+      <h3>AI Artists</h3>
+      <p>Specialized workflows for AI-generated vocals and algorithmic production</p>
+      <ul>
+        <li>AI vocal processing</li>
+        <li>Algorithm-friendly mastering</li>
+        <li>Metadata optimization</li>
+      </ul>
+    </div>
+    <div class="artist-card human">
+      <div class="artist-icon">🎙️</div>
+      <h3>Human Artists</h3>
+      <p>Traditional production for organic, human-performed music at any level</p>
+      <ul>
+        <li>Vocal coaching support</li>
+        <li>Live instrument editing</li>
+        <li>Analog warmth processing</li>
+      </ul>
+    </div>
+    <div class="artist-card hybrid">
+      <div class="artist-icon">🔀</div>
+      <h3>Hybrid Artists</h3>
+      <p>Blend human performance with AI enhancement for cutting-edge sound</p>
+      <ul>
+        <li>Human + AI vocal stacks</li>
+        <li>Hybrid production techniques</li>
+        <li>Genre-blending expertise</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="payment-section">
+  <div class="section-header">
+    <p class="label">Safe & Easy</p>
+    <h2>Secure Payments</h2>
+  </div>
+  <div class="payment-logos">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/PayPal.svg" alt="PayPal">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stripe_logo%2C_revised_2016.svg" alt="Stripe">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+  </div>
+  <a href="services.html" class="cta-btn">Browse Services</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>Sound<span>Supply</span></h3>
+      <p>A Tuniverse Inc. service</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="order.html">Order</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Sound Supply · Tuniverse Inc. All rights reserved.</p>
+</footer>
+
+<script>
+// Wave canvas
+const canvas = document.getElementById("wave");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+let t = 0;
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < 3; i++) {
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+    for (let x = 0; x < canvas.width; x++) {
+      let y = canvas.height / 2 + Math.sin((x + t * (1 + i * 0.3)) * 0.018) * (35 - i * 8);
+      ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = `rgba(0,255,204,${0.15 - i * 0.04})`;
+    ctx.lineWidth = 2 - i * 0.5;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = "#00ffcc";
+    ctx.stroke();
+  }
+  t += 1.5;
+  requestAnimationFrame(draw);
+}
+draw();
+
+// Mobile menu
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+</script>
 
 </body>
 </html>

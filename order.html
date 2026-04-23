@@ -3,35 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
 <title>Order - Sound Supply</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<canvas id="wave"></canvas>
+
 <nav>
-  <h1>Sound Supply</h1>
-  <a href="services.html">← Back to Services</a>
+  <h1>Sound<span>Supply</span></h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="order.html" class="nav-cta">Order Now</a>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </nav>
 
-<section class="order-container">
-  <h2>Place Your Order</h2>
-  <form>
-    <input type="text" placeholder="Artist Name" required>
-    <textarea placeholder="Describe your project..." required></textarea>
-    <select>
-      <option>Select Service Tier</option>
-      <option>Basic</option>
-      <option>Premium</option>
-    </select>
-    <input type="file">
-    <div class="payment-logos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/PayPal.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stripe_logo%2C_revised_2016.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png">
-    </div>
-    <a href="https://buy.stripe.com/yourlink" class="pay-btn">Complete Order</a>
-  </form>
-</section>
+<div class="order-page">
+  <div class="order-box">
+    <h2>Place Your Order</h2>
+    <p class="sub">Fill out the form and complete payment to get started</p>
 
+    <form onsubmit="submitOrder(event)">
+      <input type="text" id="artistName" placeholder="Artist Name" required>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option value="songwriting">Songwriting — $30</option>
+        <option value="ghostwriting">Ghostwriting — $100–$175</option>
+        <option value="mastering">Mastering — $15–$25</option>
+        <option value="editing">Song Editing — $15–$35</option>
+        <option value="distribution">Distribution Scout — Free</option>
+      </select>
+      <select id="tier">
+        <option value="">Select Tier (if applicable)</option>
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+      </select>
+      <textarea id="details" placeholder="Describe your project — genre, style, references, deadlines..." required></textarea>
+      <input type="file" accept="audio/*,.mp3,.wav,.aiff">
+
+      <div class="pay-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/PayPal.svg" alt="PayPal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stripe_logo%2C_revised_2016.svg" alt="Stripe">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+      </div>
+
+      <button type="submit" class="pay-btn">🔒 Complete Order</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById("wave");
+const ctx = canvas.getContext("2d");
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+let t = 0;
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for (let i=0;i<3;i++) {
+    ctx.beginPath(); ctx.moveTo(0, canvas.height/2);
+    for (let x=0;x<canvas.width;x++) {
+      let y = canvas.height/2 + Math.sin((x+t*(1+i*0.3))*0.018)*(35-i*8);
+      ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle=`rgba(0,255,204,${0.15-i*0.04})`; ctx.lineWidth=2-i*0.5;
+    ctx.shadowBlur=15; ctx.shadowColor="#00ffcc"; ctx.stroke();
+  }
+  t+=1.5; requestAnimationFrame(draw);
+}
+draw();
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+
+// Auto-fill service from URL param
+const params = new URLSearchParams(window.location.search);
+const svc = params.get('service');
+if (svc) {
+  const sel = document.getElementById('service');
+  for (let opt of sel.options) {
+    if (opt.value === svc) { opt.selected = true; break; }
+  }
+}
+
+function submitOrder(e) {
+  e.preventDefault();
+  alert('Order submitted! We\'ll contact you shortly to confirm details and payment.');
+  e.target.reset();
+}
+</script>
 </body>
 </html>
