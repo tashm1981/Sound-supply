@@ -909,18 +909,13 @@ footer {
   gap: 10px;
 }
 
-.footer-pay-icons img {
-  height: 24px;
-  width: auto;
-  background: white;
-  padding: 3px 8px;
-  border-radius: 5px;
-  object-fit: contain;
-  opacity: 0.75;
-  transition: opacity 0.3s;
+.footer-pay-icons i {
+  font-size: 2rem;
+  color: var(--gray-500);
+  transition: color 0.3s, transform 0.3s;
 }
 
-.footer-pay-icons img:hover { opacity: 1; }
+.footer-pay-icons i:hover { color: var(--primary-light); transform: translateY(-2px); }
 
 /* ORDER PAGE */
 .order-page {
@@ -1003,17 +998,13 @@ footer {
   flex-wrap: wrap;
 }
 
-.pay-logos img {
-  height: 26px;
-  background: white;
-  padding: 4px 8px;
-  border-radius: 6px;
-  object-fit: contain;
-  opacity: 0.85;
-  transition: all 0.3s;
+.pay-logos i {
+  font-size: 2rem;
+  color: var(--gray-400);
+  transition: color 0.3s, transform 0.3s;
 }
 
-.pay-logos img:hover { opacity: 1; transform: translateY(-1px); }
+.pay-logos i:hover { color: var(--primary-light); transform: translateY(-2px); }
 
 .pay-btn {
   display: block;
