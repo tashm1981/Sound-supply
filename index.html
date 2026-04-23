@@ -12,181 +12,353 @@
 
 <canvas id="wave"></canvas>
 
-<nav>
-  <h1>SoundSupply</h1>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="order.html" class="nav-cta">Order Now</a>
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-waveform-lines"></i></div>
+      <span>Sound<span class="text-gradient">Supply</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="order.html" class="nav-cta">Order Now</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
   </div>
-  <button class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="hero">
   <div class="hero-grid"></div>
-  <div class="hero-badge"><i class="fas fa-music"></i> Tuniverse Inc. Presents</div>
-  <h1>Your Sound.<br><span class="text-gradient">Supplied.</span></h1>
-  <p class="hero-subtitle">AI · Human · Hybrid</p>
-  <p class="hero-description">Professional music services for every type of artist. Songwriting, ghostwriting, mastering, editing — all in one place.</p>
-  <div class="hero-buttons">
-    <a href="services.html" class="btn btn-primary"><i class="fas fa-store"></i> Enter Marketplace</a>
-    <a href="order.html" class="btn btn-secondary"><i class="fas fa-play"></i> Place an Order</a>
+  <div class="hero-particles">
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div><div class="particle"></div>
   </div>
-  <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-number">AI</div>
-      <div class="stat-label">Artists</div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-circle pulse-dot"></i> Now Open · Tuniverse Inc.</div>
+    <h1>Your Sound.<br><span class="text-gradient">Supplied.</span></h1>
+    <p class="hero-subtitle">AI &nbsp;·&nbsp; Human &nbsp;·&nbsp; Hybrid</p>
+    <p class="hero-description">Professional songwriting, ghostwriting, mastering, and editing — built for every type of modern artist.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary"><i class="fas fa-store"></i> Browse Services</a>
+      <a href="order.html" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Place an Order</a>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">Human</div>
-      <div class="stat-label">Artists</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">Hybrid</div>
-      <div class="stat-label">Artists</div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number text-gradient">5+</div>
+        <div class="stat-label">Services</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number text-gradient">3</div>
+        <div class="stat-label">Artist Types</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number text-gradient">24h</div>
+        <div class="stat-label">Avg. Delivery</div>
+      </div>
     </div>
   </div>
   <div class="scroll-hint">
     <span>Scroll to explore</span>
-    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-  </div>
-</section>
-
-<section class="features">
-  <div class="feature">
-    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
-    <h3>Any Artist</h3>
-    <p>AI, human, and hybrid creators with tailored workflows</p>
-  </div>
-  <div class="feature">
-    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-    <h3>Fast Delivery</h3>
-    <p>Professional results delivered quickly</p>
-  </div>
-  <div class="feature">
-    <div class="feature-icon"><i class="fas fa-satellite-dish"></i></div>
-    <h3>Distribution Scout</h3>
-    <p>We match you with the perfect platform</p>
-  </div>
-  <div class="feature">
-    <div class="feature-icon"><i class="fas fa-lock"></i></div>
-    <h3>Secure Payments</h3>
-    <p>Stripe, PayPal, Visa — all major methods</p>
-  </div>
-</section>
-
-<section class="services-preview">
-  <div class="section-header">
-    <span class="label">What We Offer</span>
-    <h2 class="text-gradient">Our Services</h2>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
-      <h3>Songwriting</h3>
-      <div class="price">$30</div>
-      <p>per song</p>
-      <a href="order.html?service=songwriting" class="order-btn">Order</a>
-    </div>
-    <div class="card">
-      <div class="card-icon"><i class="fas fa-ghost"></i></div>
-      <h3>Ghostwriting</h3>
-      <div class="price">$100–$175</div>
-      <p>per song · $45/verse</p>
-      <a href="order.html?service=ghostwriting" class="order-btn">Order</a>
-    </div>
-    <div class="card">
-      <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
-      <h3>Mastering</h3>
-      <div class="price">$15–$25</div>
-      <p>per track</p>
-      <a href="order.html?service=mastering" class="order-btn">Order</a>
-    </div>
-    <div class="card">
-      <div class="card-icon"><i class="fas fa-cut"></i></div>
-      <h3>Song Editing</h3>
-      <div class="price">$15–$35</div>
-      <p>per song</p>
-      <a href="order.html?service=editing" class="order-btn">Order</a>
-    </div>
-    <div class="card highlight">
-      <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
-      <h3>Distribution Scout</h3>
-      <div class="price text-gradient-cyan">Free</div>
-      <p>consultation</p>
-      <a href="order.html?service=distribution" class="order-btn">Start</a>
+    <div class="scroll-arrow-wrap">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </div>
 </section>
 
-<section class="artist-types">
-  <div class="section-header">
-    <span class="label">No Limits</span>
-    <h2 class="text-gradient">For Every Artist</h2>
-  </div>
-  <div class="artist-grid">
-    <div class="artist-card ai">
-      <div class="artist-icon"><i class="fas fa-robot"></i></div>
-      <h3>AI Artists</h3>
-      <p>Specialized workflows for AI-generated vocals and algorithmic production</p>
-      <ul>
-        <li>AI vocal processing</li>
-        <li>Algorithm-friendly mastering</li>
-        <li>Metadata optimization</li>
-      </ul>
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+  <div class="strip-item"><i class="fas fa-microphone-alt"></i><span>Any Artist Welcome</span></div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><i class="fas fa-bolt"></i><span>Fast Delivery</span></div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><i class="fas fa-lock"></i><span>Secure Payments</span></div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><i class="fas fa-satellite-dish"></i><span>Distribution Scout</span></div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><i class="fas fa-shield-alt"></i><span>100% Ownership</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="label"><i class="fas fa-music"></i> What We Offer</span>
+      <h2 class="text-gradient">Our Services</h2>
+      <p>From concept to release-ready — we handle it all</p>
     </div>
-    <div class="artist-card human">
-      <div class="artist-icon"><i class="fas fa-microphone-alt"></i></div>
-      <h3>Human Artists</h3>
-      <p>Traditional production for organic, human-performed music at any level</p>
-      <ul>
-        <li>Vocal coaching support</li>
-        <li>Live instrument editing</li>
-        <li>Analog warmth processing</li>
-      </ul>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-glow"></div>
+        <div class="service-icon primary"><i class="fas fa-pen-nib"></i></div>
+        <h3>Songwriting</h3>
+        <p>Original songs crafted to your vision. Genre-flexible writing for AI and human artists alike.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Original lyrics & melody</li>
+          <li><i class="fas fa-check"></i> Any genre or style</li>
+          <li><i class="fas fa-check"></i> AI & human compatible</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">$30</span>
+          <span class="price-unit">/ song</span>
+        </div>
+        <a href="services.html" class="service-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-glow"></div>
+        <div class="service-icon secondary"><i class="fas fa-ghost"></i></div>
+        <h3>Ghostwriting</h3>
+        <p>Full songs or individual verses written entirely for you. 100% rights transferred — your name on everything.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Full ownership transfer</li>
+          <li><i class="fas fa-check"></i> Per song or per verse</li>
+          <li><i class="fas fa-check"></i> NDA available</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">$100–$175</span>
+          <span class="price-unit">/ song · $45/verse</span>
+        </div>
+        <a href="services.html" class="service-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-glow cyan"></div>
+        <div class="featured-badge">Most Popular</div>
+        <div class="service-icon cyan"><i class="fas fa-sliders-h"></i></div>
+        <h3>Mastering</h3>
+        <p>Streaming-ready masters optimized for Spotify, Apple Music, and all major platforms.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Streaming loudness standards</li>
+          <li><i class="fas fa-check"></i> AI vocal optimization</li>
+          <li><i class="fas fa-check"></i> Format delivery included</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">$15–$25</span>
+          <span class="price-unit">/ track</span>
+        </div>
+        <a href="services.html" class="service-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-glow"></div>
+        <div class="service-icon primary"><i class="fas fa-cut"></i></div>
+        <h3>Song Editing</h3>
+        <p>Precision editing for timing, tuning, and arrangement. Works for both live recordings and AI-generated tracks.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Vocal tuning & timing</li>
+          <li><i class="fas fa-check"></i> Arrangement cleanup</li>
+          <li><i class="fas fa-check"></i> AI & live instrument editing</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">$15–$35</span>
+          <span class="price-unit">/ song</span>
+        </div>
+        <a href="services.html" class="service-link">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="service-card highlight">
+        <div class="service-glow accent"></div>
+        <div class="service-icon accent"><i class="fas fa-satellite-dish"></i></div>
+        <h3>Distribution Scout</h3>
+        <p>We analyze your goals and match you with the perfect distribution platform for your release strategy.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check"></i> Platform matching</li>
+          <li><i class="fas fa-check"></i> Cost & fee analysis</li>
+          <li><i class="fas fa-check"></i> Release strategy planning</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount free">Free</span>
+          <span class="price-unit">consultation</span>
+        </div>
+        <a href="services.html" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+      </div>
+
     </div>
-    <div class="artist-card hybrid">
-      <div class="artist-icon"><i class="fas fa-layer-group"></i></div>
-      <h3>Hybrid Artists</h3>
-      <p>Blend human performance with AI enhancement for cutting-edge sound</p>
-      <ul>
-        <li>Human + AI vocal stacks</li>
-        <li>Hybrid production techniques</li>
-        <li>Genre-blending expertise</li>
-      </ul>
+    <div class="services-cta">
+      <a href="order.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Place Your Order</a>
     </div>
   </div>
 </section>
 
-<section class="payment-section">
-  <div class="section-header">
-    <span class="label">Safe & Easy</span>
-    <h2 class="text-gradient">Secure Payments</h2>
+<!-- ARTIST TYPES -->
+<section class="artists-section" id="artists">
+  <div class="container">
+    <div class="section-header">
+      <span class="label"><i class="fas fa-users"></i> No Limits</span>
+      <h2>For Every <span class="text-gradient">Artist</span></h2>
+      <p>We serve the full spectrum of modern music creation</p>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card ai">
+        <div class="artist-card-bg"></div>
+        <div class="artist-icon"><i class="fas fa-robot"></i></div>
+        <h3>AI Artists</h3>
+        <p>Specialized workflows for AI-generated vocals, synthetic instruments, and algorithmic production.</p>
+        <ul>
+          <li>AI vocal processing</li>
+          <li>Algorithm-friendly mastering</li>
+          <li>Metadata optimization</li>
+        </ul>
+      </div>
+      <div class="artist-card human">
+        <div class="artist-card-bg"></div>
+        <div class="artist-icon"><i class="fas fa-microphone-alt"></i></div>
+        <h3>Human Artists</h3>
+        <p>Traditional production services for organic, human-performed music at any experience level.</p>
+        <ul>
+          <li>Vocal coaching support</li>
+          <li>Live instrument editing</li>
+          <li>Analog warmth processing</li>
+        </ul>
+      </div>
+      <div class="artist-card hybrid">
+        <div class="artist-card-bg"></div>
+        <div class="artist-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Hybrid Artists</h3>
+        <p>The best of both worlds — seamlessly blending human performance with AI enhancement.</p>
+        <ul>
+          <li>Human + AI vocal stacks</li>
+          <li>Hybrid production techniques</li>
+          <li>Genre-blending expertise</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="payment-logos">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/PayPal.svg" alt="PayPal">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stripe_logo%2C_revised_2016.svg" alt="Stripe">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
-  </div>
-  <a href="services.html" class="btn btn-primary"><i class="fas fa-store"></i> Browse Services</a>
 </section>
 
+<!-- PARTNERS -->
+<section class="partners-section" id="partners">
+  <div class="container">
+    <div class="section-header">
+      <span class="label"><i class="fas fa-handshake"></i> Ecosystem</span>
+      <h2>Our <span class="text-gradient">Partners</span></h2>
+      <p>Trusted platforms and services that power the Sound Supply ecosystem</p>
+    </div>
+    <div class="partners-grid">
+
+      <div class="partner-card">
+        <div class="partner-icon distro"><i class="fab fa-spotify"></i></div>
+        <div class="partner-info">
+          <h4>Spotify for Artists</h4>
+          <p>Distribution & streaming analytics for independent artists</p>
+        </div>
+        <span class="partner-tag">Distribution</span>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-icon distro"><i class="fas fa-music"></i></div>
+        <div class="partner-info">
+          <h4>DistroKid</h4>
+          <p>Zero-commission music distribution to 150+ platforms</p>
+        </div>
+        <span class="partner-tag">Distribution</span>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-icon distro"><i class="fas fa-compact-disc"></i></div>
+        <div class="partner-info">
+          <h4>TuneCore</h4>
+          <p>Global music distribution with full royalty retention</p>
+        </div>
+        <span class="partner-tag">Distribution</span>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-icon media"><i class="fab fa-soundcloud"></i></div>
+        <div class="partner-info">
+          <h4>SoundCloud</h4>
+          <p>Independent music hosting, promotion, and discovery</p>
+        </div>
+        <span class="partner-tag">Platform</span>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-icon media"><i class="fab fa-youtube"></i></div>
+        <div class="partner-info">
+          <h4>YouTube Music</h4>
+          <p>Music video distribution and Content ID monetization</p>
+        </div>
+        <span class="partner-tag">Platform</span>
+      </div>
+
+      <div class="partner-card coming">
+        <div class="partner-icon placeholder"><i class="fas fa-plus"></i></div>
+        <div class="partner-info">
+          <h4>Coming Soon</h4>
+          <p>New partner integrations on the way</p>
+        </div>
+        <span class="partner-tag neutral">Soon</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div>
-      <h3>SoundSupply</h3>
-      <p>A Tuniverse Inc. service</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><i class="fas fa-wave-square"></i></div>
+          <span>Sound<span class="text-gradient">Supply</span></span>
+        </div>
+        <p>A Tuniverse Inc. service. Professional music creation services for AI, human, and hybrid artists.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-soundcloud"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Songwriting</a></li>
+          <li><a href="services.html">Ghostwriting</a></li>
+          <li><a href="services.html">Mastering</a></li>
+          <li><a href="services.html">Song Editing</a></li>
+          <li><a href="services.html">Distribution Scout</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="services.html">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="order.html">Place an Order</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="https://tashm1981.github.io/Tunvrs/" target="_blank">Tuniverse Inc.</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="order.html">Order</a>
+    <div class="footer-bottom">
+      <p>© 2026 Sound Supply by Tuniverse Inc. All rights reserved.</p>
+      <div class="footer-pay-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/PayPal.svg" alt="PayPal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stripe_logo%2C_revised_2016.svg" alt="Stripe">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+      </div>
     </div>
   </div>
-  <p class="copyright">© 2026 Sound Supply · Tuniverse Inc. All rights reserved.</p>
 </footer>
 
 <script>
+// Wave canvas
 const canvas = document.getElementById("wave");
 const ctx = canvas.getContext("2d");
 function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -194,23 +366,53 @@ resize(); window.addEventListener('resize', resize);
 let t = 0;
 function draw() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  const colors = ['rgba(99,102,241,0.12)', 'rgba(139,92,246,0.08)', 'rgba(6,182,212,0.06)'];
-  for (let i=0;i<3;i++) {
-    ctx.beginPath(); ctx.moveTo(0, canvas.height/2);
-    for (let x=0;x<canvas.width;x++) {
-      let y = canvas.height/2 + Math.sin((x+t*(1+i*0.25))*0.016)*(40-i*10);
-      ctx.lineTo(x,y);
+  const waves = [
+    { color: 'rgba(99,102,241,0.15)', amp: 45, speed: 1, freq: 0.015 },
+    { color: 'rgba(139,92,246,0.1)', amp: 30, speed: 1.3, freq: 0.018 },
+    { color: 'rgba(6,182,212,0.08)', amp: 20, speed: 0.8, freq: 0.02 },
+  ];
+  waves.forEach((w, i) => {
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height / 2);
+    for (let x = 0; x < canvas.width; x++) {
+      let y = canvas.height / 2 + Math.sin((x + t * w.speed) * w.freq) * w.amp;
+      ctx.lineTo(x, y);
     }
-    ctx.strokeStyle = colors[i];
-    ctx.lineWidth = 2-i*0.5;
-    ctx.shadowBlur = 20;
-    ctx.shadowColor = i===0 ? '#6366f1' : '#06b6d4';
+    ctx.strokeStyle = w.color;
+    ctx.lineWidth = 2 - i * 0.5;
+    ctx.shadowBlur = 25;
+    ctx.shadowColor = i === 2 ? '#06b6d4' : '#6366f1';
     ctx.stroke();
-  }
-  t+=1.2; requestAnimationFrame(draw);
+  });
+  t += 1.2;
+  requestAnimationFrame(draw);
 }
 draw();
-function toggleMenu() { document.querySelector('.nav-links').classList.toggle('open'); }
+
+// Nav toggle
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.navbar');
+  nav.style.background = window.scrollY > 50
+    ? 'rgba(5,5,8,0.97)'
+    : 'rgba(5,5,8,0.8)';
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelector('.nav-links').classList.remove('active');
+    }
+  });
+});
 </script>
 </body>
 </html>
